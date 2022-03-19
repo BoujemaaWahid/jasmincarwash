@@ -1,0 +1,49 @@
+<main>
+    <div class="tt">
+      <span>
+        <h2>Centres</h2>
+      </span>
+      <span class="date">12/12/2022</span>
+    </div>
+    <mat-card>
+      <button class="add-btn" mat-mini-fab (click)="openDialog()">
+          <mat-icon>add</mat-icon>
+      </button>
+      <table class="ui center aligned small compact stackable selectable striped fixed single line table">
+        <thead>
+          <tr>
+            <th>centre</th>
+            <th>adresse</th>
+            <th>telephone</th>
+            <th>Croissance (MP)</th>
+            <th>responsable</th>
+            <th>TTC actuelle</th>
+            <th>HT actuelle</th>
+            <th>Vehicules prise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of [1,2,3,4]" [routerLink]="['../visual/'+i]">
+            <td class="centre">Robinson</td>
+            <td>67 rue de courbevoie Nanterre</td>
+            <td>01 123456789</td>
+            <td>
+              <span class="croissance-moins">+33.3%</span>
+            </td>
+            <td>Ben Romdhan Arbi</td>
+            <td>
+              <a class="ui small blue circular label">456 £</a>
+            </td>
+            <td>
+              <a class="ui small violet circular label">456 £</a>
+            </td>
+            <td>
+              <a class="ui small circular label">12</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card>
+  
+  </main>
+  

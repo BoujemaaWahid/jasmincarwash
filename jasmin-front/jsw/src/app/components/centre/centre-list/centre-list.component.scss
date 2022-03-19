@@ -1,0 +1,38 @@
+mat-card{
+    box-shadow: 0px 0px 4px rgba(182, 177, 177, 0.705) !important;
+    position: relative;
+}
+.tt{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    .date{
+        font-weight: 500;
+        color: #464343;
+    }
+}
+.add-btn{
+    background: #2185d0;
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+}
+main{
+    height: fit-content;
+    position: relative;
+}
+.croissance-plus{
+    font-weight: 500;
+    color: rgb(67, 180, 67);
+}
+
+.croissance-moins{
+    font-weight: 500;
+    color: rgb(218, 57, 57);
+}
+tr{
+    cursor: pointer;
+}
+td.centre{
+    font-weight: 500;
+}

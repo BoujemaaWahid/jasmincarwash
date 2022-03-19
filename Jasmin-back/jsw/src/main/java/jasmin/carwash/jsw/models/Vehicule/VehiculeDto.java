@@ -2,6 +2,7 @@ package jasmin.carwash.jsw.models.Vehicule;
 
 import java.io.Serializable;
 
+import jasmin.carwash.jsw.models.journee.JourneeBasicDto;
 import lombok.Data;
 
 @Data
@@ -18,4 +19,5 @@ public class VehiculeDto implements Serializable{
     private String note;
     private VehiculeDetailDto detail;
     private AjouterParDto ajouterpar;
+    private JourneeBasicDto journee;
 }

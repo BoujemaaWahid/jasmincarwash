@@ -14,4 +14,5 @@ public class FormuleDto implements Serializable{
     private PrixDto citadine;
     private PrixDto berline;
     private PrixDto monospace;
+    private PrixDto moto;
 }

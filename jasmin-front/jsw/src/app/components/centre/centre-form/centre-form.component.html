@@ -1,0 +1,101 @@
+<main mat-dialog-content>
+  <span class="tt">
+    <i class="building outline icon"></i>
+    <h2 *ngIf="data.add">Nouveau centre</h2>
+    <h2 *ngIf="!data.add">Centre Robinson</h2>
+  </span>
+  <div class="ui divider"></div>
+  <form class="ui small form">
+    <div class="two fields">
+      <div class="field">
+        <label>Label</label>
+        <div class="ui input left icon">
+          <i class="building outline icon"></i>
+          <input type="text" placeholder="label..." />
+        </div>
+      </div>
+      <div class="field">
+        <label>Adresse</label>
+        <div class="ui input left icon">
+          <i class="map marker alternate icon"></i>
+          <input type="text" placeholder="adresse..." />
+        </div>
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label>Ouverture</label>
+        <div class="ui input left icon">
+          <i class="clock outline icon"></i>
+          <input type="text" [ngxMatTimepicker]="ouverture" [format]="24" [value]="'9:00'" placeholder="ouverture..." />
+        </div>
+        <ngx-mat-timepicker #ouverture></ngx-mat-timepicker>
+      </div>
+      <div class="field">
+        <label>Fermeture</label>
+        <div class="ui input left icon">
+          <i class="clock outline icon"></i>
+          <input type="text" [ngxMatTimepicker]="fermeture" [format]="24" [value]="'19:00'" placeholder="fermeture..." />
+        </div>
+      </div>
+    </div>
+    <ngx-mat-timepicker #fermeture></ngx-mat-timepicker>
+    <div class="two fields">
+      <div class="field">
+        <label>Téléphone</label>
+        <div class="ui input left icon">
+          <i class="phone icon"></i>
+          <input type="text" placeholder="téléphone..." />
+        </div>
+      </div>
+      <div class="field">
+        <label>Code</label>
+        <div class="ui input left icon">
+          <i class="key icon"></i>
+          <input type="text" placeholder="code..." />
+        </div>
+      </div>
+    </div>
+
+    <div class="two fields">
+      <div class="field">
+        <label>Responsable</label>
+        <mat-form-field appearance="fill">
+            <mat-label>Responsable</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+      </div>
+      <div class="field">
+        <label>Formule</label>
+        <mat-form-field appearance="fill">
+            <mat-label>Formule</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="field">
+
+    </div>
+    <div class="two field">
+      <div class="actions">
+        <button class="ui button small" mat-dialog-close>
+          fermer
+        </button>
+
+        <button class="ui button small to-right blue">
+          enregistrer
+        </button>
+      </div>
+    </div>
+  </form>
+</main>

@@ -42,6 +42,9 @@ public class CentreModel {
     @Column(nullable = false, length = 200)
     private String adresse;
 
+    private String telephone;
+    private String code;
+    
     @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "responsable", referencedColumnName = "id")
     private EmployeeModel responsable;

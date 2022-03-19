@@ -16,4 +16,7 @@ public class CentreBasicDto implements Serializable{
     private LocalTime ouverture;
     private LocalTime fermeture;
     private String adresse;
+    private String telephone;
+    private String code;
+    
 }

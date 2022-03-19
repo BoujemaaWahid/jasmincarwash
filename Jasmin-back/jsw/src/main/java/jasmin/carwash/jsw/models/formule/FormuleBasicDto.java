@@ -10,5 +10,6 @@ public class FormuleBasicDto implements Serializable{
     private String label;
     private PrixDto citadine;
     private PrixDto berline;
-    private PrixDto monospace;   
+    private PrixDto monospace; 
+    private PrixDto moto;   
 }

@@ -1,0 +1,37 @@
+<main>
+<mat-toolbar>
+  <div class="bar-toolbar">
+    <div class="left-bar">
+      <button mat-icon-button (click)="toggleSideNav = !toggleSideNav">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="logo-img"></div>
+      <h2 class="company-title">Jasmin<span>CarWash</span></h2>
+    </div>
+    <div class="right-bar">
+      <span class="example-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+<div class="app">
+    <mat-sidenav-container autosize="true">
+        <mat-sidenav #sidenav [mode]="navmode" [(opened)]="toggleSideNav">
+            <div class="logo-img"></div>
+            <div class="under-div"></div>
+  
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="app-body" [ngClass]="{'w-150': toggleSideNav && navmode == 'side', 'w100': !toggleSideNav && navmode == 'side'}">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    
+</div>
+</main>
