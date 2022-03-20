@@ -38,7 +38,8 @@ public class JourneeModel {
 
     private Double prixTTC;
     private Double prixHT;
-
+    private Double primes;
+    
     @OneToMany(mappedBy = "journee")
     private List<VehiculeModel> vehicules;
 }

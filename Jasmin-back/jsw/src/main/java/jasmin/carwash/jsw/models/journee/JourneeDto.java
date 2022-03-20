@@ -15,5 +15,6 @@ public class JourneeDto implements Serializable{
     private LocalDate date;
     private Double prixTTC;
     private Double prixHT;
+    private Double primes;
     private List<VehiculeDto> vehicules;
 }

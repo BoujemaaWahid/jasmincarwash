@@ -1,0 +1,51 @@
+main{
+    padding-bottom: 10px;
+}
+.vis-data{
+    display: flex;
+    align-items: center;
+    centre-old-chart,centre-actual-chart{
+        flex: 1;
+        width: 100%
+    }
+}
+.divider{
+    margin: 0;
+}
+.title-h{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    .cog{
+        font-size: 1.2em;
+        color: #524d4d;
+        cursor: pointer;
+        &:hover{
+            color: #243468;
+        }
+    }
+}
+.tf{
+    font-size: large;
+    color: #3a3737;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and(max-width: 720px){
+    .header{
+        flex-direction: column;
+        .stats{
+            align-self: flex-end;
+        }
+    }
+    .vis-data{
+        flex-direction: column;
+        align-items: start;
+        
+    }
+}

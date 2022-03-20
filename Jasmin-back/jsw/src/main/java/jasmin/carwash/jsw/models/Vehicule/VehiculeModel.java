@@ -1,5 +1,7 @@
 package jasmin.carwash.jsw.models.Vehicule;
 
+import java.time.LocalTime;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,6 +35,7 @@ public class VehiculeModel {
     private Double remise;
     private Double tva;
     
+    private LocalTime entree;
     private String categorie;
     private String matricule;
     private String marque;
@@ -46,6 +49,7 @@ public class VehiculeModel {
     @ManyToOne
     @JoinColumn(name = "ajouter_par", referencedColumnName = "id")
     private EmployeeModel ajouterpar;
+
 
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "journee", referencedColumnName = "id")

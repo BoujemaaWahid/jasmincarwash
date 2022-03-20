@@ -20,6 +20,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { CentreVisualisationComponent } from './components/centre/centre-visualisation/centre-visualisation.component';
 import { CentreListComponent } from './components/centre/centre-list/centre-list.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { CentrePlanningComponent } from './components/centre/centre-planning/centre-planning.component';
+import { CentreOldChartComponent } from './components/centre/centre-old-chart/centre-old-chart.component';
+import { CentreActualChartComponent } from './components/centre/centre-actual-chart/centre-actual-chart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     CentreComponent,
     CentreFormComponent,
     CentreVisualisationComponent,
-    CentreListComponent
+    CentreListComponent,
+    CentrePlanningComponent,
+    CentreOldChartComponent,
+    CentreActualChartComponent
   ],
   imports: [
     BrowserModule,

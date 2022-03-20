@@ -1,0 +1,77 @@
+<table class="ui center aligned small compact stackable selectable striped fixed single line table">
+    <thead>
+      <tr>
+        <th>Vehicules</th>  
+        <th>T.CB</th>
+          <th>T.Chq</th>
+          <th>T.Esp</th>
+            <th>Total</th>
+            <th>Primes</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>10</td>
+            <td>100£</td>
+            <td>0</td>
+            <td>140£</td>
+            <td>250£</td>
+            <td>4£</td>
+        </tr>
+    </tbody>
+  </table>
+  <div class="ui divider"></div>
+  <table class="ui center aligned small compact stackable selectable striped fixed single line table">
+    <thead>
+      <tr>
+          <th>N°</th>
+          <th>Vehi.</th>
+          <th>Mat.</th>
+          <th>Heure</th>
+          <th>int.</th>
+          <th>ext.</th>
+          <th>c.basic</th>
+          <th>lustrage</th>
+          <th>m.lustrage</th>
+          <th>sh.moq</th>
+          <th>sieges</th>
+          <th>cuires</th>
+          <th>prix</th>
+          <th>CB</th>
+          <th>CHQ</th>
+          <th>Esp</th>
+          <th>tel</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+        <td>#{{i}}</td>
+        <td>Nissan</td>
+        <td>124-MM-55</td>
+        <td>12:00</td>
+        <td class="positive">
+            <i class="green checkmark icon"></i>
+        </td>
+        <td class="negative"></td>
+        <td class="positive">
+            <i class="green checkmark icon"></i>
+        </td>
+        <td class="positive">
+            <i class="green checkmark icon"></i>
+        </td>
+        <td class="negative"></td>
+        <td class="positive">
+            <i class="green checkmark icon"></i>
+        </td>
+        <td class="negative"></td>
+        <td class="negative"></td>
+        <td><a class="ui label mini blue">150£</a></td>
+        <td class="negative"></td>
+        <td class="negative"></td>
+        <td class="positive">
+            <i class="green checkmark icon"></i>
+        </td>
+        <td>01 111 111</td>
+        </tr>
+    </tbody>
+  </table>  

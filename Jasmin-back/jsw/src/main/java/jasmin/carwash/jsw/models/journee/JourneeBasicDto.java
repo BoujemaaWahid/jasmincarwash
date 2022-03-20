@@ -13,4 +13,5 @@ public class JourneeBasicDto implements Serializable{
     private LocalDate date;
     private Double prixTTC;
     private Double prixHT;
+    private Double primes;
 }

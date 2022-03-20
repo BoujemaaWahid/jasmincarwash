@@ -9,7 +9,6 @@ import { CentreService } from '../service/centre.service';
 })
 export class CentreVisualisationComponent implements OnInit {
   id = null
-  
   constructor(private route: ActivatedRoute, private service: CentreService) {
     this.id = route.snapshot.params['id']
   }
