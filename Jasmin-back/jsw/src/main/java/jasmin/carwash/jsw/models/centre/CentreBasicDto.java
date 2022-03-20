@@ -18,5 +18,5 @@ public class CentreBasicDto implements Serializable{
     private String adresse;
     private String telephone;
     private String code;
-    
+    private Double croissancemp = .0;
 }

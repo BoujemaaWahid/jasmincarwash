@@ -35,7 +35,7 @@ public class JourneeModel {
     private CentreModel centre;
 
     private LocalDate date;
-
+    
     private Double prixTTC;
     private Double prixHT;
     private Double primes;

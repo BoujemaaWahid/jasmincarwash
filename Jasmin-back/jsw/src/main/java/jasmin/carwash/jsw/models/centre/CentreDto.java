@@ -21,6 +21,7 @@ public class CentreDto implements Serializable{
     private String label;
     private LocalTime ouverture;
     private LocalTime fermeture;
+    private Double croissancemp = .0;
     private String adresse;
     private String telephone;
     private String code;

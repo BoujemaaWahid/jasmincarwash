@@ -1,24 +1,24 @@
 <main mat-dialog-content>
   <span class="tt">
     <i class="building outline icon"></i>
-    <h2 *ngIf="data.add">Nouveau centre</h2>
-    <h2 *ngIf="!data.add">Centre Robinson</h2>
+    <h2 *ngIf="!data.id">Nouveau centre</h2>
+    <h2 *ngIf="data.id">Centre Robinson</h2>
   </span>
   <div class="ui divider"></div>
-  <form class="ui small form">
+  <form class="ui small form" [formGroup]="centreForm" novalidate>
     <div class="two fields">
       <div class="field">
         <label>Label</label>
         <div class="ui input left icon">
           <i class="building outline icon"></i>
-          <input type="text" placeholder="label..." />
+          <input type="text" formControlName="label" placeholder="label..." />
         </div>
       </div>
       <div class="field">
         <label>Adresse</label>
         <div class="ui input left icon">
           <i class="map marker alternate icon"></i>
-          <input type="text" placeholder="adresse..." />
+          <input type="text" formControlName="adresse" placeholder="adresse..." />
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
         <label>Ouverture</label>
         <div class="ui input left icon">
           <i class="clock outline icon"></i>
-          <input type="text" [ngxMatTimepicker]="ouverture" [format]="24" [value]="'9:00'" placeholder="ouverture..." />
+          <input type="text" [ngxMatTimepicker]="ouverture" [format]="24" formControlName="ouverture" placeholder="ouverture..." />
         </div>
         <ngx-mat-timepicker #ouverture></ngx-mat-timepicker>
       </div>
@@ -35,7 +35,7 @@
         <label>Fermeture</label>
         <div class="ui input left icon">
           <i class="clock outline icon"></i>
-          <input type="text" [ngxMatTimepicker]="fermeture" [format]="24" [value]="'19:00'" placeholder="fermeture..." />
+          <input type="text" [ngxMatTimepicker]="fermeture" [format]="24" formControlName="fermeture" placeholder="fermeture..." />
         </div>
       </div>
     </div>
@@ -45,14 +45,14 @@
         <label>Téléphone</label>
         <div class="ui input left icon">
           <i class="phone icon"></i>
-          <input type="text" placeholder="téléphone..." />
+          <input type="text" formControlName="telephone" placeholder="téléphone..." />
         </div>
       </div>
       <div class="field">
         <label>Code</label>
         <div class="ui input left icon">
           <i class="key icon"></i>
-          <input type="text" placeholder="code..." />
+          <input type="text" formControlName="code" placeholder="code..." />
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@
         <label>Responsable</label>
         <mat-form-field appearance="fill">
             <mat-label>Responsable</mat-label>
-            <mat-select>
+            <mat-select formControlName="responsable">
               <mat-option *ngFor="let food of foods" [value]="food.value">
                 {{food.viewValue}}
               </mat-option>
@@ -74,7 +74,7 @@
         <label>Formule</label>
         <mat-form-field appearance="fill">
             <mat-label>Formule</mat-label>
-            <mat-select>
+            <mat-select formControlName="formule" [(value)]="selected">
               <mat-option *ngFor="let food of foods" [value]="food.value">
                 {{food.viewValue}}
               </mat-option>
@@ -92,7 +92,7 @@
           fermer
         </button>
 
-        <button class="ui button small to-right blue">
+        <button class="ui button small to-right blue" (click)="centreEnregistre()">
           enregistrer
         </button>
       </div>

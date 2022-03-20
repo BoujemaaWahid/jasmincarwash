@@ -23,6 +23,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { CentrePlanningComponent } from './components/centre/centre-planning/centre-planning.component';
 import { CentreOldChartComponent } from './components/centre/centre-old-chart/centre-old-chart.component';
 import { CentreActualChartComponent } from './components/centre/centre-actual-chart/centre-actual-chart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,8 @@ import { CentreActualChartComponent } from './components/centre/centre-actual-ch
     NgxMatTimepickerModule,
     MatSelectModule,
     NgApexchartsModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

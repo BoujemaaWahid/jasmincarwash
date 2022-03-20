@@ -11,4 +11,5 @@ export interface CentreModel{
     code?: string;
     responsable?: EmployeeModel;
     formule?: FormuleModel;
+    croissancemp?: number;
 }

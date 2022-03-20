@@ -36,11 +36,15 @@ public class CentreModel {
     @Column(unique = true, nullable = false,length = 100)
     private String label;
 
+    @Column(columnDefinition = "Decimal(10,2) default '0.0'")
+    private Double croissancemp;
+
     private LocalTime ouverture;
     private LocalTime fermeture;
 
     @Column(nullable = false, length = 200)
     private String adresse;
+
 
     private String telephone;
     private String code;
