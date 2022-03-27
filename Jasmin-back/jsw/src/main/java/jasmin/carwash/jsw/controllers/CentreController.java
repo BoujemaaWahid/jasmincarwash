@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import jasmin.carwash.jsw.models.centre.CentreDto;
+import jasmin.carwash.jsw.models.centre.CentreNomDto;
 import jasmin.carwash.jsw.services.centre.CentreService;
 import reactor.core.publisher.Flux;
 
@@ -23,12 +25,26 @@ import reactor.core.publisher.Flux;
 @RestController
 @RequestMapping("/centre")
 public class CentreController{
+    @Value("${centre.stream.delay}") Integer delay;
     @Autowired CentreService centreService;
 
     @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux< List<CentreDto> > findAll(){
-        return Flux.interval(Duration.ofSeconds(1))
+    public Flux< List<CentreDto> > streamAll(){
+        return Flux.interval(Duration.ofSeconds(delay))
         .map(e->centreService.findAll()).distinct(); 
+    }
+
+    @GetMapping("/none-responsable")
+    public List<CentreNomDto> findWithoutResponsable(){
+        return centreService.findWithoutResponsable();
+    }
+    @GetMapping("/id/{id}")
+    public CentreDto byId(@PathVariable("id") Integer id){
+        return centreService.findById(id);
+    }
+    @GetMapping("/all")
+    public List<CentreDto> findAll(){
+        return centreService.findAll();
     }
 
     @GetMapping("/{label}")

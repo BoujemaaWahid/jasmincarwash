@@ -24,6 +24,9 @@ import { CentrePlanningComponent } from './components/centre/centre-planning/cen
 import { CentreOldChartComponent } from './components/centre/centre-old-chart/centre-old-chart.component';
 import { CentreActualChartComponent } from './components/centre/centre-actual-chart/centre-actual-chart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmployeeComponent } from './components/employee/employee/employee.component';
+import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
+import { EmployeeFormComponent } from './components/employee/employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CentreListComponent,
     CentrePlanningComponent,
     CentreOldChartComponent,
-    CentreActualChartComponent
+    CentreActualChartComponent,
+    EmployeeComponent,
+    EmployeeListComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,

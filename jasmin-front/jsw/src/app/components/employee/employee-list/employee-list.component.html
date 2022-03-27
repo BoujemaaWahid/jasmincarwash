@@ -1,0 +1,48 @@
+<main>
+    <div class="tt">
+      <span>
+        <h2>
+            <mat-icon>groups</mat-icon>Employees
+        </h2>
+      </span>
+    </div>
+    <mat-card>
+
+      <button class="ch-btn" mat-mini-fab>
+        <mat-icon>show_chart</mat-icon>
+      </button>
+      <button class="add-btn" mat-mini-fab (click)="openDialog()">
+          <mat-icon>add</mat-icon>
+      </button>
+      <table class="ui center aligned small compact stackable selectable striped fixed single line table">
+        <thead>
+          <tr>
+            <th>Nom complet</th>
+            <th>telephone</th>
+            <th>email</th>
+            <th>active</th>
+            <th>type</th>
+            <th>assume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of employees">
+            <td>{{i.prenom}} {{i.nom}}</td>
+            <td>{{i.telephone}}</td>
+            <td>{{i.email}}</td>
+            <td>
+                <i *ngIf="i.active" class="green check icon"></i>
+                <i *ngIf="!i.active" class="red close icon"></i>
+            </td>
+            <td>
+                <a class="ui label small">{{i.type}}</a>
+            </td>
+            <td>
+                <a class="ui label blue mini circular" *ngFor="let c of i.assume">{{c.label}}</a>
+                <a class="ui small label" *ngIf="!i.assume || i.assume.length == 0">Aucun</a>  
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card>
+  </main>

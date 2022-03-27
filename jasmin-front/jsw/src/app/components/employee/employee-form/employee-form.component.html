@@ -1,0 +1,95 @@
+<main mat-dialog-content>
+    <span class="tt">
+      <i class="user icon"></i>
+      <h2 *ngIf="!data.id">Nouveau employee</h2>
+      <h2 *ngIf="data.id">Employee is</h2>
+    </span>
+    <div class="ui divider"></div>
+    <form class="ui small form" [formGroup]="employeeForm" novalidate>
+      <div class="field">
+        <label>Type</label>
+        <div class="ui input left icon">
+          <i class="cog icon"></i>
+          <input type="text" placeholder="type..." formControlName="type">
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label>Nom</label>
+          <div class="ui input left icon">
+            <i class="user icon"></i>
+            <input type="text" formControlName="nom" placeholder="nom..." />
+          </div>
+        </div>
+        <div class="field">
+          <label>Prenom</label>
+          <div class="ui input left icon">
+            <i class="users icon"></i>
+            <input type="text" formControlName="prenom" placeholder="prenom..." />
+          </div>
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label>Telephone</label>
+          <div class="ui input left icon">
+            <i class="phone icon"></i>
+            <input type="text"  formControlName="telephone" placeholder="telephone..." />
+          </div>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <div class="ui input left icon">
+            <i class="at icon"></i>
+            <input type="text" formControlName="email" placeholder="email..." />
+          </div>
+        </div>
+      </div>
+      
+  
+      <div class="two fields">
+        <div class="field">
+          <label>Active</label>
+          <mat-form-field appearance="fill">
+              <mat-label>active</mat-label>
+              <mat-select formControlName="active">
+                <mat-option *ngFor="let ac of active" [value]="ac.value">
+                  {{ac.view}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+        </div>
+        <div class="field">
+          <label>Centres</label>
+          <mat-form-field appearance="fill">
+              <mat-label>centres</mat-label>
+              <mat-select formControlName="assume" multiple>
+                  <mat-select-trigger>
+                      {{ formatMsg(centresValue.length) }}
+                  </mat-select-trigger>
+                <mat-option *ngFor="let ac of centres" [value]="ac.value">
+                  {{ac.view}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <div class="field">
+  
+      </div>
+      <div class="two field">
+        <div class="actions">
+          <button class="ui button small" mat-dialog-close>
+            fermer
+          </button>
+  
+          <button class="ui button small to-right blue" (click)="employeeEnregistre()">
+            enregistrer
+          </button>
+        </div>
+      </div>
+    </form>
+  </main>
+  

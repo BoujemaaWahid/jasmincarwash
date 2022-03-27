@@ -4,8 +4,8 @@ import { FormuleModel } from "./FormuleModel";
 export interface CentreModel{
     id?: number;
     label?: string;
-    ouverture?: Date;
-    fermeture?: Date;
+    ouverture?: string;
+    fermeture?: string;
     adresse?: string;
     telephone?: string;
     code?: string;

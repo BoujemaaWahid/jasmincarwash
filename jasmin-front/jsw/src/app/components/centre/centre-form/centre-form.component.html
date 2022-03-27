@@ -27,7 +27,7 @@
         <label>Ouverture</label>
         <div class="ui input left icon">
           <i class="clock outline icon"></i>
-          <input type="text" [ngxMatTimepicker]="ouverture" [format]="24" formControlName="ouverture" placeholder="ouverture..." />
+          <input [ngxMatTimepicker]="ouverture" [format]="24" type="text"  formControlName="ouverture" placeholder="ouverture..." />
         </div>
         <ngx-mat-timepicker #ouverture></ngx-mat-timepicker>
       </div>
@@ -35,7 +35,7 @@
         <label>Fermeture</label>
         <div class="ui input left icon">
           <i class="clock outline icon"></i>
-          <input type="text" [ngxMatTimepicker]="fermeture" [format]="24" formControlName="fermeture" placeholder="fermeture..." />
+          <input [ngxMatTimepicker]="fermeture" [format]="24" type="text"  formControlName="fermeture" placeholder="fermeture..." />
         </div>
       </div>
     </div>
@@ -63,8 +63,8 @@
         <mat-form-field appearance="fill">
             <mat-label>Responsable</mat-label>
             <mat-select formControlName="responsable">
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
+              <mat-option *ngFor="let r of responsables" [value]="r.value">
+                {{r.view}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -72,14 +72,14 @@
       </div>
       <div class="field">
         <label>Formule</label>
-        <mat-form-field appearance="fill">
+        <!--<mat-form-field appearance="fill">
             <mat-label>Formule</mat-label>
             <mat-select formControlName="formule" [(value)]="selected">
               <mat-option *ngFor="let food of foods" [value]="food.value">
                 {{food.viewValue}}
               </mat-option>
             </mat-select>
-          </mat-form-field>
+          </mat-form-field>-->
       </div>
     </div>
     <div class="ui divider"></div>

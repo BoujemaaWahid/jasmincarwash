@@ -1,9 +1,9 @@
 <main>
     <div class="tt">
       <span>
-        <h2>Centres</h2>
+        <h2><i class="building outline icon"></i>Centres</h2>
       </span>
-      <span class="date">12/12/2022</span>
+      <span class="date">{{actualDate}}</span>
     </div>
     <mat-card>
 
@@ -27,19 +27,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let c of centres" [routerLink]="['../visual/'+c.id]">
+          <tr *ngFor="let c of centres; let i = index" (click)="navigate(c.id)">
             <td class="centre">{{c.label}}</td>
             <td>{{c.adresse}}</td>
             <td>{{c.telephone}}</td>
             <td>
-              <span [ngClass]="croissanceClass(c.croissancemp)">{{c.croissancemp}}%</span>
+              <span [ngClass]="croissanceClass(c.croissancemp, i)">{{c.croissancemp}}%</span>
             </td>
-            <td>Ben Romdhan Arbi</td>
+            <td class="responsable">
+              <i class="minus icon" *ngIf="c.responsable == null"></i>
+              <span *ngIf="c.responsable != null">{{c.responsable.nom}}</span>
+            </td>
             <td>
               {{c.code}}
             </td>
-            <td>
-              <a class="ui small violet circular label">456 £</a>
+            <td class="ch-a">
+              456 £
             </td>
             <td>
               <a class="ui small circular label">12</a>
@@ -48,6 +51,5 @@
         </tbody>
       </table>
     </mat-card>
-  
   </main>
   

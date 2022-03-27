@@ -1,0 +1,27 @@
+label,h2{
+    color: #4a4848 !important;
+    font-weight: 600 !important;
+}
+.tt{
+    display: flex;
+    align-items: center;
+
+    color: #4a4848 !important;
+    font-weight: 600 !important;
+    i{
+        font-size: 1.5em;
+    }
+}
+main{
+    position: relative;
+}
+.to-right{
+    float: right;
+}
+mat-form-field{
+    height: 0;
+    width: 100%;
+    ::ng-deep .mat-form-field-flex{
+        background: none !important;
+    }
+}

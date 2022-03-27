@@ -14,7 +14,7 @@ public class InternTask {
     
     @Autowired CentreDao centreDao;
 
-    @Scheduled(fixedDelay = 1000 * 3, initialDelay = 1000)
+    @Scheduled(fixedDelay = 1000 * 60 * 60 * 12, initialDelay = 1000)
     public void updateCroissanceCentreMp(){
         List<CentreModel> centres = new ArrayList<>();
         centreDao.findAll().forEach(centres::add);

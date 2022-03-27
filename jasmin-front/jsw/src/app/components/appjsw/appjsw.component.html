@@ -24,7 +24,10 @@
         <mat-sidenav #sidenav [mode]="navmode" [(opened)]="toggleSideNav">
             <div class="logo-img"></div>
             <div class="under-div"></div>
-  
+            <mat-nav-list>
+              <a mat-list-item routerLink="/jsw/centres">Centres</a>
+              <a mat-list-item routerLink="/jsw/employee">Employees</a>
+            </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content>
             <div class="app-body" [ngClass]="{'w-150': toggleSideNav && navmode == 'side', 'w100': !toggleSideNav && navmode == 'side'}">
