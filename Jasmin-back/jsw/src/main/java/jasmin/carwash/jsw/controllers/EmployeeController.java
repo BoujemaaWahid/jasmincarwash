@@ -30,7 +30,7 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public EmployeeDto findById(@PathVariable("id") Integer id){
-        return null;
+        return employeeService.findById(id);
     }
 
     @PostMapping

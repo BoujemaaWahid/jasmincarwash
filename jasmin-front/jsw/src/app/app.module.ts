@@ -27,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeComponent } from './components/employee/employee/employee.component';
 import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
 import { EmployeeFormComponent } from './components/employee/employee-form/employee-form.component';
+import { EmployeeVisualisationComponent } from './components/employee/employee-visualisation/employee-visualisation.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { EmployeeFormComponent } from './components/employee/employee-form/emplo
     CentreActualChartComponent,
     EmployeeComponent,
     EmployeeListComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    EmployeeVisualisationComponent
   ],
   imports: [
     BrowserModule,

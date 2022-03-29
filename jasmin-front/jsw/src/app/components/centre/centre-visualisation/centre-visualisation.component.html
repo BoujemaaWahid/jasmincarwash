@@ -3,8 +3,9 @@
       <div class="tf">
         <span class="title-h">
             <i class="building outline icon"></i>{{centre?.label}}
-            <a class="ui mini label blue">{{centre?.responsable?.nom}} {{centre?.responsable?.prenom}}</a>
-            <i class="cog icon" (click)="openDialog()"></i>
+            <a *ngIf="centre?.responsable" class="ui mini label blue">{{centre?.responsable?.nom}} {{centre?.responsable?.prenom}}</a>
+            <a *ngIf="!centre?.responsable" class="ui small label">Aucun responsable</a>
+            <i class="edit icon" (click)="openDialog()"></i>
         </span>
         <span>{{actualDate}}</span>
     </div>

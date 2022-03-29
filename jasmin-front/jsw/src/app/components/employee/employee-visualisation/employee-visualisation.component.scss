@@ -1,0 +1,35 @@
+.desc{
+display: flex;
+justify-content: space-between;
+    .coords{
+
+        font-weight: 500;
+        font-size: large;
+        color: rgb(70, 66, 66);
+        display: flex;
+        gap: 1rem;
+    }
+    .nom{
+        font-weight: 500;
+        align-items: center;
+        font-size: large;
+        display: flex;
+        color: rgb(70, 66, 66);
+        .assume{
+            margin-left: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .edit{
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #134362;
+            mat-icon{
+                font-size: large;
+            }
+        }
+    }
+}
+.divider{
+    margin: 5px;
+}

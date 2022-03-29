@@ -5,6 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmployeeModel } from 'src/app/models/EmployeeModel';
 import { CentreService } from '../../centre/service/centre.service';
 import { EmployeeService } from '../service/employee.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-employee-form',
@@ -18,12 +19,13 @@ export class EmployeeFormComponent implements OnInit {
   ]
   centres = [] as any
   employeeForm = new FormGroup({
-    nom: new FormControl('NOM'),
-    prenom: new FormControl('PRENOM'),
+    id: new FormControl(),
+    nom: new FormControl(),
+    prenom: new FormControl(),
     active: new FormControl(true),
-    type: new FormControl('RES'),
-    telephone: new FormControl('TEL'),
-    email: new FormControl('EMAIL'),
+    type: new FormControl(),
+    telephone: new FormControl(),
+    email: new FormControl(),
     assume: new FormControl()
   })
   
@@ -36,7 +38,22 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.centreService.withNoneResponsable().subscribe(res=> this.centres = res)
+    let id = this.data.id
+    if( id ){
+      forkJoin({
+        centres: this.centreService.withNoneResponsable(),
+        model: this.service.findOne(parseInt(id))}).subscribe(res=>{
+          this.centres = res.centres
+          let assume = res.model?.assume?.map(e=>e.id)
+          res.model?.assume?.forEach(e=>{
+            this.centres.push({value: e.id, view: e.label})
+          })
+          this.employeeForm.patchValue(res.model)
+          this.employeeForm.patchValue({assume})
+          
+        })
+  //    this.centreService.withNoneResponsable().subscribe(res=> this.centres = res)
+    }
   }
   formatMsg(value: number){
     let t = this.centresValue.length > 1 ? `(+${this.centresValue.length - 1} autres)` : ''
@@ -50,7 +67,10 @@ export class EmployeeFormComponent implements OnInit {
     if( val.assume )
       val['assume'] = val['assume'].map((e: any)=>{ return {id: e} })
     let r = val as EmployeeModel
-    this.service.save(r).subscribe(res=> this.dialogRef.close())
+    if(!this.data.id)
+      this.service.save(r).subscribe(res=> this.dialogRef.close())
+    else
+      this.service.update(r).subscribe(res=> this.dialogRef.close())
   }
 
   get centresValue(): Array<any>{

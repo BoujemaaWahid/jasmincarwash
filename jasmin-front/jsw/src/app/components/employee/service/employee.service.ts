@@ -23,4 +23,12 @@ export class EmployeeService {
   public save(model: EmployeeModel): Observable<any>{
     return this.http.post(this.url, model, httpOptions) 
   }
+
+  public update(model: EmployeeModel): Observable<any>{
+    return this.http.put(this.url, model, httpOptions) 
+  }
+
+  public findOne(id: number): Observable<EmployeeModel>{
+    return this.http.get<EmployeeModel>(this.url+'/'+id)
+  }
 }

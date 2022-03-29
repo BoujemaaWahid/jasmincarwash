@@ -1,0 +1,15 @@
+<div class="desc">
+<div class="nom">
+    <span><i class="user icon"></i>{{model?.nom}} {{model?.prenom}}
+        <button mat-mini-fab class="edit" (click)="openDialog()">
+            <mat-icon>edit</mat-icon>
+          </button>
+    </span>
+    <div class="assume">
+        <span *ngFor="let c of model?.assume">
+            <a class="ui label">{{c.label}}</a>
+        </span>
+    </div>
+</div>
+</div>
+<div class="ui divider"></div>

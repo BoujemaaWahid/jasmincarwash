@@ -21,4 +21,5 @@ public interface CentreDao extends
         List<CentreModel> findByFormule(FormuleModel formule);
         @Query("From CentreModel C where C.responsable = NULL")
         List<CentreModel> findByResponsableNull();
+        
 }

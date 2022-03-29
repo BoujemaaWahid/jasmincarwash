@@ -63,6 +63,8 @@ export class CentreFormComponent implements OnInit, AfterViewInit {
           let i = res.center.responsable.id
           let r = this.responsables.find(e=>e.value == i)
           this.centreForm.patchValue({responsable: r?.value})
+        }else{
+          this.centreForm.patchValue({responsable: -1})
         }
       })
       return
